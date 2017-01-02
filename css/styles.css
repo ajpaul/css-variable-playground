@@ -1,0 +1,10 @@
+:root {
+    --base: #e8e8e8;
+    --blur: 10px;
+    --spacing: 10px;
+}
+
+i {
+    color: pink;
+    background-color: red;
+}
