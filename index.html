@@ -20,9 +20,9 @@
 <body>
     
     <!-- side controls -->
-    <aside class="primary-nav">
-
-        <em><h2>CSS Variables!</h2></em>
+    <aside>
+        <h2><em>CSS Variables!</em> &#x1F601 </h2>
+        <span>Edit values to update variables!</span>
 
         <div>
             <h3>FLEX OPTIONS</h3>
@@ -42,73 +42,46 @@
 
         <div>
             <h3>TILE MARGINS</h3>
-            <input type="range" name="margins" min="0" max="20" value="10" data-suffix="px" onchange="updateSliders(this);" data-input="margin">
-            <span id="margin">10</span>
+            <input type="range" name="margins" min="0" max="20" value="10" data-suffix="px" class="control" data-input="margin">
+            <span id="margin">10px</span>
         </div>
 
         <div>
-            <h3>TILE SHADOWS</h3>
-            <input type="range" name="shadowX" min="0" max="20" value="5" data-suffix="px" onchange="updateSliders(this);" data-input="x">
-                <span id="x">5</span>
-            <input type="range" name="shadowY" min="0" max="20" value="5" data-suffix="px" onchange="updateSliders(this);" data-input="y">
-                <span id="y">5</span>
-            <input type="range" name="shadowBlur" min="0" max="20" value="5" data-suffix="px" onchange="updateSliders(this);" data-input="blur">
-                <span id="blur">5</span>
+            <h3>TILE SHADOWS (x, y, blur)</h3>
+            <input type="range" name="shadowX" min="0" max="20" value="5" data-suffix="px" class="control" data-input="x">
+                <span id="x">5px</span>
+            <input type="range" name="shadowY" min="0" max="20" value="5" data-suffix="px" class="control" data-input="y">
+                <span id="y">5px</span>
+            <input type="range" name="shadowBlur" min="0" max="20" value="5" data-suffix="px" class="control" data-input="blur">
+                <span id="blur">5px</span>
         </div>
 
         <div>
             <h3>TILE COLORS</h3>
-            <input id="tileColor" name="tile-color" class="color-control" type="color" value="#add8e6">
+            <input id="tileColor" name="tile-color" class="control" type="color" value="#add8e6" data-suffix="">
         </div>
 
         <div>
             <h3>BACKGROUND COLOR</h3>
-            <input id="backgroundColor" name="background-color" class="color-control" type="color" value="#ffffff">
+            <input id="backgroundColor" name="background-color" class="control" type="color" value="#ffffff" data-suffix="">
         </div>
 
         <div>
             <h3>SIDE PANEL COLOR</h3>
-            <input id="sideColor" name="side-panel-color" class="color-control" type="color" value="#d3d3d3">
+            <input id="sideColor" name="side-panel-color" class="control" type="color" value="#d3d3d3" data-suffix="">
         </div>
         
 
     </aside>
 
 
-    <!-- main panel -->
+    <!-- main panel with tiles -->
     <main>
-
-        <div class="tiles">
-            <span class="fa-stack fa-lg">
-                <i class="fa fa-square fa-stack-2x"></i>
-                <i class="fa fa-usd fa-stack-1x fa-inverse"></i>
-            </span>
-        </div>
-        <div class="tiles">
-            <span class="fa-stack fa-lg">
-                <i class="fa fa-square fa-stack-2x"></i>
-                <i class="fa fa-eur fa-stack-1x fa-inverse"></i>
-            </span>
-        </div>
-        <div class="tiles">
-            <span class="fa-stack fa-lg">
-                <i class="fa fa-square fa-stack-2x"></i>
-                <i class="fa fa-gbp fa-stack-1x fa-inverse"></i>
-            </span>
-        </div>
-        <div class="tiles">
-            <span class="fa-stack fa-lg">
-                <i class="fa fa-square fa-stack-2x"></i>
-                <i class="fa fa-jpy fa-stack-1x fa-inverse"></i>
-            </span>
-        </div>
-        <div class="tiles">
-            <span class="fa-stack fa-lg">
-                <i class="fa fa-square fa-stack-2x"></i>
-                <i class="fa fa-rub fa-stack-1x fa-inverse"></i>
-            </span>
-        </div>        
-        
+       <div></div>
+       <div></div>
+       <div></div>
+       <div></div>
+       <div></div>        
     </main>
 
     <!-- Put our scripts at the end of the body -->

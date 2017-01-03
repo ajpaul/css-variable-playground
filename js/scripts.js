@@ -1,50 +1,33 @@
-//currency values
-// $1 = .81 gbp
-// $1 = 117.36 yen
-// $1 = 68.14 rupee
-// $1 = .96 euro
+document.addEventListener("DOMContentLoaded", function(event) { 
+  
+    var controls = document.querySelectorAll(".control");
+    var checkboxes = document.querySelectorAll(".checkbox-list input[type='checkbox']");
+
+    //set the flex-start box to checked since it's the default flex value
+    document.getElementById("box1").checked = true;
+
+    //set the listeners for the controls
+    controls.forEach(control => control.addEventListener("change", function(control) {
+        controlChange(control);
+    }));
+
+    checkboxes.forEach(checkbox => checkbox.addEventListener("change", function(checkbox) {
+        checkboxChange(checkbox, checkboxes);
+    }));
+});
 
 
-//change the css classes for all controls to .controls
-//remove click handlers from sliders and merge into color handlers
-//fix fa icon vertical centering
-//fix right margin
-//remove FA folder and add CDN link...github is screwy
-//fix live moving of input ranges
+//listener functions
+function controlChange(control) {
+    var ctrl = control.srcElement.value;
 
-var controls = document.querySelectorAll(".color-control");
-var checkboxes = document.querySelectorAll(".checkbox-list input[type='checkbox']");
+    document.documentElement.style.setProperty(`--${control.srcElement.name}`, ctrl + control.srcElement.dataset.suffix);
 
-console.log(checkboxes);
-
-document.getElementById("box1").checked = true;
-
-console.log(controls);
-
-controls.forEach(control => control.addEventListener("change", function(control) {
-    updateColors(control);
-}));
-
-checkboxes.forEach(checkbox => checkbox.addEventListener("change", function(checkbox) {
-    checkboxChange(checkbox);
-}));
-
-function updateColors(control) {
-    var color = document.getElementById(control.srcElement.id).value;
-
-    document.documentElement.style.setProperty(`--${control.srcElement.name}`, color);
+    if(control.srcElement.dataset.input)
+        document.getElementById(control.srcElement.dataset.input).innerText = ctrl + control.srcElement.dataset.suffix;
 }
 
-function updateSliders(val) {
-    console.log(val.name + ', ' + val.value + ', ' + val.dataset.input);
-
-    var x = document.getElementById(val.dataset.input).innerText = val.value;
-    //console.log(x);
-
-    document.documentElement.style.setProperty(`--${val.name}`, val.value + val.dataset.suffix);
-}
-
-function checkboxChange(checkbox) {
+function checkboxChange(checkbox, checkboxes) {
     console.log(checkbox);
     console.log(checkbox.srcElement.checked);
 
