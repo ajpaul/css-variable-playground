@@ -8,16 +8,23 @@
 //change the css classes for all controls to .controls
 //remove click handlers from sliders and merge into color handlers
 //fix fa icon vertical centering
-//get flex list variables working
+//fix right margin
 
 var controls = document.querySelectorAll(".color-control");
+var checkboxes = document.querySelectorAll(".checkbox-list input[type='checkbox']");
+
+console.log(checkboxes);
+
+document.getElementById("box1").checked = true;
 
 console.log(controls);
 
 controls.forEach(control => control.addEventListener("change", function(control) {
-    console.log(control);
-    console.log(control.srcElement.id);
     updateColors(control);
+}));
+
+checkboxes.forEach(checkbox => checkbox.addEventListener("change", function(checkbox) {
+    checkboxChange(checkbox);
 }));
 
 function updateColors(control) {
@@ -34,3 +41,18 @@ function updateSliders(val) {
 
     document.documentElement.style.setProperty(`--${val.name}`, val.value + val.dataset.suffix);
 }
+
+function checkboxChange(checkbox) {
+    console.log(checkbox);
+    console.log(checkbox.srcElement.checked);
+
+    for (var i = 0; i < checkboxes.length; i++) {
+        
+        if(checkboxes[i].name !== checkbox.srcElement.name)
+            checkboxes[i].checked = false;
+    }
+
+    document.documentElement.style.setProperty('--justify-content', checkbox.srcElement.name);
+}
+
+
