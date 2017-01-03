@@ -28,8 +28,6 @@ function controlChange(control) {
 }
 
 function checkboxChange(checkbox, checkboxes) {
-    console.log(checkbox);
-    console.log(checkbox.srcElement.checked);
 
     for (var i = 0; i < checkboxes.length; i++) {
         
