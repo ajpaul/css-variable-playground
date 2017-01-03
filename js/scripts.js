@@ -9,6 +9,8 @@
 //remove click handlers from sliders and merge into color handlers
 //fix fa icon vertical centering
 //fix right margin
+//remove FA folder and add CDN link...github is screwy
+//fix live moving of input ranges
 
 var controls = document.querySelectorAll(".color-control");
 var checkboxes = document.querySelectorAll(".checkbox-list input[type='checkbox']");
