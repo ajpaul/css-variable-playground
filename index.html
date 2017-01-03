@@ -15,26 +15,98 @@
 
     <!-- Font Awesome -->
     <link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" >
-
 </head>
 
 <body>
+    
+    <!-- side controls -->
+    <aside class="primary-nav">
+
+        <div>
+            <h3>FLEX OPTIONS</h3>
+            <ul class="checkbox-list">
+                <li><input id="box1" type="checkbox" />
+                    <label for="box1">flex-start</label></li>
+                <li><input id="box2" type="checkbox" />
+                    <label for="box2">flex-end</label></li>
+                <li><input id="box3" type="checkbox" />
+                    <label for="box3">center</label></li>
+                <li><input id="box4" type="checkbox" />
+                    <label for="box4">space-between</label></li>
+                <li><input id="box5" type="checkbox" />
+                    <label for="box5">space-around</label></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>TILE MARGINS</h3>
+            <input type="range" name="margins" min="0" max="20" value="10" data-suffix="px" onchange="updateSliders(this);" data-input="margin">
+            <span id="margin">10</span>
+        </div>
+
+        <div>
+            <h3>TILE SHADOWS</h3>
+            <input type="range" name="shadowX" min="0" max="20" value="5" data-suffix="px" onchange="updateSliders(this);" data-input="x">
+                <span id="x">5</span>
+            <input type="range" name="shadowY" min="0" max="20" value="5" data-suffix="px" onchange="updateSliders(this);" data-input="y">
+                <span id="y">5</span>
+            <input type="range" name="shadowBlur" min="0" max="20" value="5" data-suffix="px" onchange="updateSliders(this);" data-input="blur">
+                <span id="blur">5</span>
+        </div>
+
+        <div>
+            <h3>TILE COLORS</h3>
+            <input id="tileColor" name="tile-color" class="color-control" type="color" value="#add8e6">
+        </div>
+
+        <div>
+            <h3>BACKGROUND COLOR</h3>
+            <input id="backgroundColor" name="background-color" class="color-control" type="color" value="#ffffff">
+        </div>
+
+        <div>
+            <h3>SIDE PANEL COLOR</h3>
+            <input id="sideColor" name="side-panel-color" class="color-control" type="color" value="#d3d3d3">
+        </div>
+        
+
+    </aside>
+
+
+    <!-- main panel -->
     <main>
 
-        <input type="range">
-        <input type="range">
-        <input type="range">
-
-        <input type="color">
-
-
-        <!-- icon tiles -->
-        <i class="fa fa-usd" aria-hidden="true"></i>
-        <i class="fa fa-eur" aria-hidden="true"></i>
-        <i class="fa fa-gbp" aria-hidden="true"></i>
-        <i class="fa fa-jpy" aria-hidden="true"></i>
-        <i class="fa fa-rub" aria-hidden="true"></i>
-
+        <div class="tiles">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-square fa-stack-2x"></i>
+                <i class="fa fa-usd fa-stack-1x fa-inverse"></i>
+            </span>
+        </div>
+        <div class="tiles">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-square fa-stack-2x"></i>
+                <i class="fa fa-eur fa-stack-1x fa-inverse"></i>
+            </span>
+        </div>
+        <div class="tiles">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-square fa-stack-2x"></i>
+                <i class="fa fa-gbp fa-stack-1x fa-inverse"></i>
+            </span>
+        </div>
+        <div class="tiles">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-square fa-stack-2x"></i>
+                <i class="fa fa-jpy fa-stack-1x fa-inverse"></i>
+            </span>
+        </div>
+        <div class="tiles">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-square fa-stack-2x"></i>
+                <i class="fa fa-rub fa-stack-1x fa-inverse"></i>
+            </span>
+        </div>        
+        
     </main>
 
     <!-- Put our scripts at the end of the body -->

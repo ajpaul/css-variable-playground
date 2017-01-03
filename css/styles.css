@@ -1,10 +1,113 @@
+/* Declare CSS variables */
 :root {
-    --base: #e8e8e8;
-    --blur: 10px;
-    --spacing: 10px;
+    --justify-content: flex-start;
+    --side-panel-color: #d3d3d3;
+    --background-color: #fff;
+    --tile-color: #add8e6;
+    --margins: 10px;
+    --shadowX: 5px;
+    --shadowY: 5px;
+    --shadowBlur: 5px;
 }
 
+/* My own little reset chunk */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-size: 14px;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  overflow: hidden;
+}
+
+/* GLOBAL STYLES */
 i {
     color: pink;
-    background-color: red;
 }
+
+main {
+    position: absolute;
+    left: 250px;
+    display: flex;
+    justify-content: var(--justify-content);
+    background-color: var(--background-color);
+    height: 100%;
+    width: 100%;
+}
+
+label {
+    font-size: 1em;
+    font-family: inherit;
+}
+
+h3 {
+    margin-bottom: 10px;
+}
+
+
+
+/* CLASSES (listed alphabetically) */
+.primary-nav {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    width: 250px;;
+    background: var(--side-panel-color);
+    z-index: 10;
+    padding: 20px;  
+}
+
+.tiles {
+    background-color: var(--tile-color);
+    height: 100px;
+    width: 100px;
+    border: 1px solid black;
+    margin: var(--margins);
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: var(--shadowX) var(--shadowY) var(--shadowBlur) rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+
+
+
+
+/* checkbox bullshit */
+
+/*** basic styles ***/
+.checkbox-list { 
+  width: 250px; 
+  list-style-type: none;
+}
+
+
+
+/*** custom checkboxes ***/
+
+input[type=checkbox] { display:none; } /* to hide the checkbox itself */
+input[type=checkbox] + label:before {
+  font-family: FontAwesome;
+  display: inline-block;
+}
+
+input[type=checkbox] + label:before { content: "\f096"; } /* unchecked icon */
+input[type=checkbox] + label:before { letter-spacing: 10px; } /* space between checkbox and label */
+
+input[type=checkbox]:checked + label:before { content: "\f046"; } /* checked icon */
+input[type=checkbox]:checked + label:before { letter-spacing: 5px; } /* allow space for check mark */
